@@ -38,3 +38,17 @@ Sun May 15 17:32:30 UTC 2022:
  tests:  10|0
 total_score: 70/70
 78875ca
+Sun May 15 17:33:44 UTC 2022: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:0:
+sudoku.c: In function ‘DFS’:
+sudoku.c:140:5: error: too many arguments to function ‘free’
+     free(aux, adj, n);
+     ^~~~
+In file included from test.c:2:0:
+/usr/include/stdlib.h:563:13: note: declared here
+ extern void free (void *__ptr) __THROW;
+             ^~~~
+Compilation failed
+53c2c32
