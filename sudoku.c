@@ -44,7 +44,30 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-
+    int * vector = (int *) calloc (10, sizeof(int));
+    for (int i = 0; i < 9; i++)
+    {
+      for (int j = 0; j < 9; j++)
+      {
+        if (n->sudo[i][j] != 0)
+        {
+          vector[n->sudo[i][j]]++;
+          if (vector[n->sudo[i][j]] > 1) return 0;
+        }
+      }
+    }
+    vector = (int *) calloc (10, sizeof(int));
+    for (int i = 0; i < 9; i++)
+    {
+      for (int j = 0; j < 9; j++)
+      {
+        if (n->sudo[j][i] != 0)
+        {
+          vector[n->sudo[j][i]]++;
+          if (vector[n->sudo[j][i]] > 1) return 0;
+        }
+      }
+    }
     return 1;
 }
 
