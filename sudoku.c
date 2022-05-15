@@ -83,6 +83,7 @@ int is_valid(Node* n){
       }
       vector = (int *) calloc (10, sizeof(int));
     }
+    free(vector);
     return 1;
 }
 
@@ -102,6 +103,7 @@ List* get_adj_nodes(Node* n){
             {
               Node * adj = copy(n);
               pushBack(list, adj);
+              free(adj);
             }
           }
           return list;
