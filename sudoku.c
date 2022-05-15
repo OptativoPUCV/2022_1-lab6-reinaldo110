@@ -103,7 +103,6 @@ List* get_adj_nodes(Node* n){
             {
               Node * adj = copy(n);
               pushBack(list, adj);
-              free(adj);
             }
           }
           return list;
